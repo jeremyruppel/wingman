@@ -14,3 +14,11 @@ require 'config/environment'
 # Require test dependencies *after* rails
 require 'rspec/rails'
 require 'shoulda'
+
+# Configure RSpec
+RSpec.configure do |config|
+  # Use color
+  config.color_enabled = true
+  # Change the formatter
+  config.formatter = :documentation
+end
