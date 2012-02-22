@@ -11,6 +11,13 @@ namespace :wingman do
     ENV[ 'WINGMAN_RAILS_PATH' ] = "spec/rails/#{ENV[ 'WINGMAN_RAILS_NAME' ]}"
   end
 
+  desc "Remove all test rails apps"
+  task :clean => [ :env ] do
+    Dir[ 'spec/rails/rails-*' ].each do |app|
+      FileUtils.rm_rf app
+    end
+  end
+
   desc "Create a test rails app if necessary"
   task :rails do
     if File.exist? ENV[ 'WINGMAN_RAILS_PATH' ]
