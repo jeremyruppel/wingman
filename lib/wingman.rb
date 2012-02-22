@@ -1,5 +1,5 @@
-require "wingman/version"
+require 'wingman/version'
 
 module Wingman
-  # Your code goes here...
+  autoload :Engine, 'wingman/engine'
 end

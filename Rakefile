@@ -23,7 +23,7 @@ namespace :wingman do
     if File.exist? ENV[ 'WINGMAN_RAILS_PATH' ]
       puts "Using existing #{ENV[ 'WINGMAN_RAILS_NAME' ]} app"
     else
-      sh "bundle exec rails new #{ENV[ 'WINGMAN_RAILS_PATH' ]}"
+      sh "bundle exec rails new #{ENV[ 'WINGMAN_RAILS_PATH' ]} -m spec/support/rails_template.rb"
     end
   end
 
