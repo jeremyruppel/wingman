@@ -10,3 +10,7 @@ Bundler.require
 
 # Boot the rails app
 require 'config/environment'
+
+# Require test dependencies *after* rails
+require 'rspec/rails'
+require 'shoulda'
