@@ -9,4 +9,12 @@ describe Wingman::StatusController do
   end
 
   it { should route( :get, '/' ).to( :action => :index ) }
+
+  before do
+    get :index
+  end
+
+  it { should respond_with( :success ) }
+  it { should respond_with_content_type( :html ) }
+  it { should render_template( :index ) }
 end
