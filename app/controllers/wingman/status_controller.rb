@@ -7,7 +7,7 @@ module Wingman
 
       render :json => {
         :current_time => Time.now.utc.to_s,
-        :tests => Wingman.tests
+        :tests        => Wingman.tests.map( &:resolve )
       }
     end
 

@@ -44,29 +44,32 @@ describe Wingman::StatusController do
 
       ) }
     end
+  end
 
-    describe 'the response body with tests' do
-      before do
-        Wingman.configure do |config|
-          config.test :foo do
-            'bar'
-          end
+  context 'GET status with tests' do
+
+    before do
+      Wingman.configure do |config|
+        config.test :foo do
+          'bar'
         end
       end
 
-      subject { JSON.parse response.body, :symbolize_names => true }
-
-      it { should eq(
-
-        {
-          :current_time => Time.now.utc.to_s,
-          :tests        =>
-          [
-            :foo => 'bar'
-          ]
-        }
-
-      ) }
+      get :status, :format => :json
     end
+
+    subject { JSON.parse response.body, :symbolize_names => true }
+
+    it { should eq(
+
+      {
+        :current_time => Time.now.utc.to_s,
+        :tests        =>
+        [
+          :foo => 'bar'
+        ]
+      }
+
+    ) }
   end
 end

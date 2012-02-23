@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe Wingman do
 
+  before :each do
+    Wingman.reset!
+  end
+
   context '#configure' do
 
     it { should respond_to( :configure ) }
@@ -11,6 +15,14 @@ describe Wingman do
         config.should eq( Wingman )
       end
     end
+
+    describe '#resets' do
+      subject { Wingman.resets }
+
+      it { should be_kind_of( Array ) }
+    end
+
+    it { should respond_to( :reset! ) }
 
     describe '#test' do
 
