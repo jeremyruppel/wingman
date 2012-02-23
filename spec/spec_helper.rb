@@ -16,6 +16,11 @@ require 'rspec/rails'
 require 'shoulda'
 
 # Define some helpers
+module ResponseBodyHelper
+  def the_response_body
+    JSON.parse response.body, :symbolize_names => true
+  end
+end
 
 # Configure RSpec
 RSpec.configure do |config|
@@ -27,4 +32,6 @@ RSpec.configure do |config|
   config.before :each do
     Wingman.reset!
   end
+  # Include those helpers
+  config.include ResponseBodyHelper
 end

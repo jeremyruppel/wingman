@@ -33,7 +33,7 @@ describe Wingman::StatusController do
     it { should respond_with_content_type( :json ) }
 
     context 'the response body' do
-      subject { JSON.parse response.body, :symbolize_names => true }
+      subject { the_response_body }
 
       it { should eq(
 
@@ -59,7 +59,7 @@ describe Wingman::StatusController do
       get :status, :format => :json
     end
 
-    subject { JSON.parse response.body, :symbolize_names => true }
+    subject { the_response_body }
 
     it { should eq(
 
@@ -87,7 +87,7 @@ describe Wingman::StatusController do
       get :status, :format => :json
     end
 
-    subject { JSON.parse response.body, :symbolize_names => true }
+    subject { the_response_body }
 
     it { should eq(
 
