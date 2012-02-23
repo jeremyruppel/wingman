@@ -15,10 +15,16 @@ require 'config/environment'
 require 'rspec/rails'
 require 'shoulda'
 
+# Define some helpers
+
 # Configure RSpec
 RSpec.configure do |config|
   # Use color
   config.color_enabled = true
   # Change the formatter
   config.formatter = :documentation
+  # Reset wingman before each test
+  config.before :each do
+    Wingman.reset!
+  end
 end

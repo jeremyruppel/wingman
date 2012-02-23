@@ -8,11 +8,6 @@ describe Wingman::StatusController do
     @routes = Wingman::Engine.routes
   end
 
-  # TODO move this and the call in config_spec into support
-  before :each do
-    Wingman.reset!
-  end
-
   context 'GET index' do
 
     it { should route( :get, '/' ).to( :action => :index ) }

@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe Wingman do
 
-  before :each do
-    Wingman.reset!
-  end
-
   context '#configure' do
 
     it { should respond_to( :configure ) }
