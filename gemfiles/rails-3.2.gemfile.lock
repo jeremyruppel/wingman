@@ -1,7 +1,7 @@
 PATH
-  remote: /Users/jeremyruppel/Git/wingman
+  remote: /Users/jeremy.ruppel/Git/wingman
   specs:
-    wingman (0.0.1)
+    wingman (0.1.0)
       rails
 
 GEM
