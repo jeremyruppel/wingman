@@ -2,6 +2,7 @@ PATH
   remote: /Users/jeremy.ruppel/Git/wingman
   specs:
     wingman (0.0.1)
+      rails
 
 GEM
   remote: http://rubygems.org/
