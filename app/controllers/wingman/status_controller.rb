@@ -6,7 +6,8 @@ module Wingman
     def status
 
       render :json => {
-        :current_time => Time.now.utc.to_s
+        :current_time => Time.now.utc.to_s,
+        :tests => Wingman.tests
       }
     end
 
