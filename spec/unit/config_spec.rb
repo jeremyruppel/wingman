@@ -44,5 +44,26 @@ describe Wingman do
         Wingman.tests.should have( 1 ).item
       end
     end
+
+    describe '#stat' do
+
+      it { should respond_to( :stat ) }
+
+      describe 'the stat array' do
+        subject { Wingman.stats }
+
+        it { should be_kind_of( Array ) }
+      end
+
+      it 'should add a new stat to the stat array' do
+        Wingman.configure do |config|
+          config.stat :foo do
+            'bar'
+          end
+        end
+
+        Wingman.stats.should have( 1 ).item
+      end
+    end
   end
 end

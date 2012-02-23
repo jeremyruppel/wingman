@@ -4,6 +4,7 @@ module Wingman
   autoload :Engine, 'wingman/engine'
   autoload :Config, 'wingman/config'
   autoload :Tests,  'wingman/tests'
+  autoload :Stats,  'wingman/stats'
 
   class << self
 
@@ -22,6 +23,7 @@ module Wingman
 
   include Config
   include Tests
+  include Stats
 end
 
 require 'wingman/engine' if defined?(Rails)

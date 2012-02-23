@@ -8,6 +8,11 @@ describe Wingman::StatusController do
     @routes = Wingman::Engine.routes
   end
 
+  # TODO move this and the call in config_spec into support
+  before :each do
+    Wingman.reset!
+  end
+
   context 'GET index' do
 
     it { should route( :get, '/' ).to( :action => :index ) }
@@ -39,7 +44,8 @@ describe Wingman::StatusController do
 
         {
           :current_time => Time.now.utc.to_s,
-          :tests        => [ ]
+          :tests        => [ ],
+          :stats        => [ ]
         }
 
       ) }
@@ -64,7 +70,36 @@ describe Wingman::StatusController do
 
       {
         :current_time => Time.now.utc.to_s,
+        :stats        => [ ],
         :tests        =>
+        [
+          :foo => 'bar'
+        ]
+      }
+
+    ) }
+  end
+
+  context 'GET status with stats' do
+
+    before do
+      Wingman.configure do |config|
+        config.stat :foo do
+          'bar'
+        end
+      end
+
+      get :status, :format => :json
+    end
+
+    subject { JSON.parse response.body, :symbolize_names => true }
+
+    it { should eq(
+
+      {
+        :current_time => Time.now.utc.to_s,
+        :tests        => [ ],
+        :stats        =>
         [
           :foo => 'bar'
         ]
