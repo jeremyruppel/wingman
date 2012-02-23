@@ -5,7 +5,9 @@ module Wingman
 
     def status
 
-      render :json => { }
+      render :json => {
+        :current_time => Time.now.utc.to_s
+      }
     end
 
     def index
