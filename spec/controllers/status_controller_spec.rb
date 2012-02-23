@@ -38,6 +38,7 @@ describe Wingman::StatusController do
       it { should eq(
 
         {
+          :kosher       => true,
           :current_time => Time.now.utc.to_s,
           :tests        => [ ],
           :stats        => [ ]
@@ -64,6 +65,7 @@ describe Wingman::StatusController do
     it { should eq(
 
       {
+        :kosher       => true,
         :current_time => Time.now.utc.to_s,
         :stats        => [ ],
         :tests        =>
@@ -92,11 +94,86 @@ describe Wingman::StatusController do
     it { should eq(
 
       {
+        :kosher       => true,
         :current_time => Time.now.utc.to_s,
         :tests        => [ ],
         :stats        =>
         [
           :foo => 'bar'
+        ]
+      }
+
+    ) }
+  end
+
+  context 'GET status with passing tests' do
+
+    before do
+      Wingman.configure do |config|
+        config.test :foo do
+          true
+        end
+        config.test :bar do
+          true
+        end
+      end
+
+      get :status, :format => :json
+    end
+
+    subject { the_response_body }
+
+    it { should eq(
+
+      {
+        :kosher       => true,
+        :current_time => Time.now.utc.to_s,
+        :stats        => [ ],
+        :tests        =>
+        [
+          {
+            :foo => true
+          },
+          {
+            :bar => true
+          }
+        ]
+      }
+
+    ) }
+  end
+
+  context 'GET status with failing tests' do
+
+    before do
+      Wingman.configure do |config|
+        config.test :foo do
+          true
+        end
+        config.test :bar do
+          false
+        end
+      end
+
+      get :status, :format => :json
+    end
+
+    subject { the_response_body }
+
+    it { should eq(
+
+      {
+        :kosher       => false,
+        :current_time => Time.now.utc.to_s,
+        :stats        => [ ],
+        :tests        =>
+        [
+          {
+            :foo => true
+          },
+          {
+            :bar => false
+          }
         ]
       }
 
