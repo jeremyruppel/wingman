@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Wingman::VERSION
   s.authors     = ["Jeremy Ruppel"]
   s.email       = ["jeremy.ruppel@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/jeremyruppel/wingman"
+  s.summary     = %q{DO NOT USE YET}
+  s.description = %q{DO NOT USE YET}
 
   s.rubyforge_project = "wingman"
 
