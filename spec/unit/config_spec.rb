@@ -12,7 +12,7 @@ describe Wingman do
       end
     end
 
-    describe '#resets' do
+    context '#resets' do
       subject { Wingman.resets }
 
       it { should be_kind_of( Array ) }
@@ -20,11 +20,11 @@ describe Wingman do
 
     it { should respond_to( :reset! ) }
 
-    describe '#test' do
+    context '#test' do
 
       it { should respond_to( :test ) }
 
-      describe 'the test array' do
+      context 'the test array' do
         subject { Wingman.tests }
 
         it { should be_kind_of( Array ) }
@@ -41,11 +41,11 @@ describe Wingman do
       end
     end
 
-    describe '#stat' do
+    context '#stat' do
 
       it { should respond_to( :stat ) }
 
-      describe 'the stat array' do
+      context 'the stat array' do
         subject { Wingman.stats }
 
         it { should be_kind_of( Array ) }

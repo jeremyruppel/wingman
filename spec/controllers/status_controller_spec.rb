@@ -32,7 +32,7 @@ describe Wingman::StatusController do
     it { should respond_with( :success ) }
     it { should respond_with_content_type( :json ) }
 
-    describe 'the response body' do
+    context 'the response body' do
       subject { JSON.parse response.body, :symbolize_names => true }
 
       it { should eq(
