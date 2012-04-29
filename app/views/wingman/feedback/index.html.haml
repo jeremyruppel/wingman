@@ -1,4 +1,6 @@
-= form_for :feedback do |f|
+- if flash[ :notice ]
+  .notice= flash[ :notice ]
+= form_for :feedback, :action => send_feedback_path do |f|
   %fieldset#user
     - Wingman.stats.each do |k, s|
       .row
