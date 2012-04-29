@@ -1,5 +1,6 @@
 require 'rails/engine'
 require 'haml'
+require 'compass-rails'
 
 module Wingman
   class Engine < Rails::Engine
