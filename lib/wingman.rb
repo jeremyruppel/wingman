@@ -3,13 +3,7 @@ require 'wingman/version'
 module Wingman
   autoload :Engine, 'wingman/engine'
   autoload :Config, 'wingman/config'
-  autoload :Stats,  'wingman/stats'
-
-  module Stats
-    autoload :Stat, 'wingman/stats/stat'
-    autoload :JavascriptEnabled, 'wingman/stats/javascript_enabled'
-    autoload :UserAgent, 'wingman/stats/user_agent'
-  end
+  autoload :Stat,   'wingman/stat'
 
   class << self
     def configure
@@ -18,7 +12,6 @@ module Wingman
   end
 
   include Config
-  include Stats
 end
 
 require 'wingman/engine' if defined?(Rails)
