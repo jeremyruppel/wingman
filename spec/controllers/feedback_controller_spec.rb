@@ -22,4 +22,16 @@ describe Wingman::FeedbackController do
     it { should render_template( :index ) }
     it { should render_with_layout( :wingman ) }
   end
+
+  context 'POST create' do
+
+    it { should route( :post, '/' ).to( :action => :create ) }
+
+    before do
+      post :create
+    end
+
+    it { should redirect_to( root_path ) }
+    it { should set_the_flash.to( 'Thanks for your feedback!' ) }
+  end
 end

@@ -4,4 +4,8 @@ class Wingman::FeedbackController < ActionController::Base
 
   def index
   end
+
+  def create
+    redirect_to root_path, :notice => 'Thanks for your feedback!'
+  end
 end
