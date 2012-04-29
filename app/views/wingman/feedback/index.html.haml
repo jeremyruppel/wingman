@@ -2,5 +2,10 @@
   %fieldset#user
     - Wingman.stats.each do |k, s|
       = s.render
-      = f.text_field s.name, :value => s.value
+      = f.label s.name
+      = f.text_field s.name, :value => s.value, :readonly => true
   %fieldset#form
+    = f.label :email
+    = f.text_field :email
+    = f.label :comments
+    = f.text_field :comments
