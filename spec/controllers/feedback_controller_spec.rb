@@ -27,11 +27,40 @@ describe Wingman::FeedbackController do
 
     it { should route( :post, '/' ).to( :action => :create ) }
 
-    before do
-      post :create
+    context 'with a valid email and comment' do
+      before do
+        post :create, :feedback => { :email => 'foo@bar.com', :comment => 'Ur sites borked d00d' }
+      end
+
+      it { should redirect_to( root_path ) }
+      it { should set_the_flash.to( 'Thanks for your feedback!' ) }
     end
 
-    it { should redirect_to( root_path ) }
-    it { should set_the_flash.to( 'Thanks for your feedback!' ) }
+    context 'without a valid email' do
+      before do
+        post :create, :feedback => { :comment => 'Ur sites borked d00d' }
+      end
+
+      it { should redirect_to( root_path ) }
+      it { should set_the_flash.to( 'Oops! Error message here!' ) }
+    end
+
+    context 'without a valid comment' do
+      before do
+        post :create, :feedback => { :email => 'foo@bar.com' }
+      end
+
+      it { should redirect_to( root_path ) }
+      it { should set_the_flash.to( 'Oops! Error message here!' ) }
+    end
+
+    context 'with stat keys' do
+      before do
+        post :create, :feedback => { :email => 'foo@bar.com', :comment => 'Ur sites borked d00d', :javascript_enabled => false }
+      end
+
+      it { should redirect_to( root_path ) }
+      it { should set_the_flash.to( 'Thanks for your feedback!' ) }
+    end
   end
 end

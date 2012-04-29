@@ -6,6 +6,11 @@ class Wingman::FeedbackController < ActionController::Base
   end
 
   def create
-    redirect_to root_path, :notice => 'Thanks for your feedback!'
+    feedback = Wingman::Feedback.new params[ :feedback ]
+    if feedback.valid?
+      redirect_to root_path, :notice => 'Thanks for your feedback!'
+    else
+      redirect_to root_path, :notice => 'Oops! Error message here!'
+    end
   end
 end
