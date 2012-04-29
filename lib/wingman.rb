@@ -5,6 +5,8 @@ module Wingman
   autoload :Config, 'wingman/config'
 
   module Stats
+    autoload :Stat, 'wingman/stats/stat'
+    autoload :JavascriptEnabled, 'wingman/stats/javascript_enabled'
     autoload :UserAgent, 'wingman/stats/user_agent'
   end
 

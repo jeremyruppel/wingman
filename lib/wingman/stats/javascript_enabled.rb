@@ -1,14 +1,14 @@
 module Wingman
   module Stats
-    class UserAgent < Stat
+    class JavascriptEnabled < Stat
 
       def value
-        'Not detected'
+        'Not enabled'
       end
 
       def render
         script = <<-EOS
-$( function( ){ $( 'input##{name}' ).val( navigator.userAgent ) } );
+$( function( ){ $( 'input##{name}' ).val( 'Enabled' ) } );
         EOS
       end
     end
