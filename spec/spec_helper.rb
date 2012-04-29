@@ -28,10 +28,6 @@ RSpec.configure do |config|
   config.color_enabled = true
   # Change the formatter
   config.formatter = :documentation
-  # Reset wingman before each test
-  config.before :each do
-    Wingman.reset!
-  end
   # Include those helpers
   config.include ResponseBodyHelper
 end

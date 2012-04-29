@@ -11,13 +11,5 @@ describe Wingman do
         config.should eq( Wingman )
       end
     end
-
-    context '#resets' do
-      subject { Wingman.resets }
-
-      it { should be_kind_of( Array ) }
-    end
-
-    it { should respond_to( :reset! ) }
   end
 end

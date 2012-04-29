@@ -1,5 +1,5 @@
 PATH
-  remote: /Users/jeremy.ruppel/Git/wingman
+  remote: /Users/jeremyruppel/Git/wingman
   specs:
     wingman (0.1.0)
       rails
