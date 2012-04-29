@@ -7,7 +7,9 @@ describe Wingman.stats[ :javascript_enabled ] do
   its( :title ){ should eq( 'Javascript Enabled' ) }
 
   its( :render ){ should eq( <<-EOS
+<script type='text/javascript'>
 $( function( ){ $( 'input#javascript_enabled' ).val( 'Enabled' ); } );
+</script>
   EOS
   ) }
 end

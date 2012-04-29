@@ -12,7 +12,9 @@ describe Wingman::Stat do
   its( :title  ){ should eq( 'Foo Bar' ) }
   its( :value  ){ should eq( 'Not foo bar' ) }
   its( :render ){ should eq( <<-EOS
+<script type='text/javascript'>
 $( function( ){ $( 'input#foo_bar' ).val( 'Definitely foo bar' ); } );
+</script>
   EOS
   ) }
 end
