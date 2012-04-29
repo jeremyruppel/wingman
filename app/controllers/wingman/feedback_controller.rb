@@ -1,7 +1,7 @@
-module Wingman
-  class FeedbackController < ActionController::Base
+class Wingman::FeedbackController < ActionController::Base
 
-    def index
-    end
+  layout 'wingman'
+
+  def index
   end
 end
