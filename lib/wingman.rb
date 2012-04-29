@@ -1,9 +1,10 @@
 require 'wingman/version'
 
 module Wingman
-  autoload :Engine, 'wingman/engine'
-  autoload :Config, 'wingman/config'
-  autoload :Stat,   'wingman/stat'
+  autoload :Engine,   'wingman/engine'
+  autoload :Config,   'wingman/config'
+  autoload :Stat,     'wingman/stat'
+  autoload :Feedback, 'wingman/feedback'
 
   class << self
     def configure
