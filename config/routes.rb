@@ -1,4 +1,4 @@
 Wingman::Engine.routes.draw do
-  post '/' => 'feedback#create', :as => :send_feedback
-  root :to => 'feedback#index'
+  resources :feedback, :only => [ :index, :create ], :path => ''
+  root      :to => 'feedback#index'
 end
