@@ -22,7 +22,8 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
 
-  s.add_dependency 'rails'
+  s.add_dependency 'rails', '>= 3.2.0'
+  s.add_dependency 'haml', '>= 3.1.4'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'appraisal', '0.4.1'
