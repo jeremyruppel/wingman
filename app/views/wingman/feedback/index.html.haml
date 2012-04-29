@@ -1,6 +1,6 @@
 = form_for :feedback do |f|
   %fieldset#user
-  - Wingman.stats.each do |k, s|
-    = s.render
-    = f.text_field s.name, :value => s.value
+    - Wingman.stats.each do |k, s|
+      = s.render
+      = f.text_field s.name, :value => s.value
   %fieldset#form

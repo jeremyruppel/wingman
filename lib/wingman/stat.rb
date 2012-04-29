@@ -25,7 +25,7 @@ module Wingman
     def render
       script = <<-EOS
 <script type='text/javascript'>
-$( function( ){ $( 'input##{name}' ).val( #{@replace_value} ); } );
+$( function( ){ $( 'input#feedback_#{name}' ).val( #{@replace_value} ); } );
 </script>
 EOS
       script.html_safe

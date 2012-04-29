@@ -8,7 +8,7 @@ describe Wingman.stats[ :user_agent ] do
 
   its( :render ){ should eq( <<-EOS
 <script type='text/javascript'>
-$( function( ){ $( 'input#user_agent' ).val( navigator.userAgent ); } );
+$( function( ){ $( 'input#feedback_user_agent' ).val( navigator.userAgent ); } );
 </script>
   EOS
   ) }

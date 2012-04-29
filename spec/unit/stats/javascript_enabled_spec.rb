@@ -8,7 +8,7 @@ describe Wingman.stats[ :javascript_enabled ] do
 
   its( :render ){ should eq( <<-EOS
 <script type='text/javascript'>
-$( function( ){ $( 'input#javascript_enabled' ).val( 'Enabled' ); } );
+$( function( ){ $( 'input#feedback_javascript_enabled' ).val( 'Enabled' ); } );
 </script>
   EOS
   ) }

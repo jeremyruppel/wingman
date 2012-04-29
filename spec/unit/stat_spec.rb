@@ -13,7 +13,7 @@ describe Wingman::Stat do
   its( :value  ){ should eq( 'Not foo bar' ) }
   its( :render ){ should eq( <<-EOS
 <script type='text/javascript'>
-$( function( ){ $( 'input#foo_bar' ).val( 'Definitely foo bar' ); } );
+$( function( ){ $( 'input#feedback_foo_bar' ).val( 'Definitely foo bar' ); } );
 </script>
   EOS
   ) }
