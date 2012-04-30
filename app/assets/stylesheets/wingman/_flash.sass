@@ -1,0 +1,15 @@
+@mixin flash( $color, $darker )
+  border: 1px solid $darker
+  background: $color
+  padding: $margin
+  margin-bottom: $margin
+  font-weight: bold
+  color: $white
+  @include text-shadow( $darker 0 2px 2px )
+
+.notice
+  @include flash( $green, $dark-green )
+.alert
+  @include flash( $red, $dark-red )
+
+// end

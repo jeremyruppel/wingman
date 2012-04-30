@@ -10,7 +10,7 @@ class Wingman::FeedbackController < ActionController::Base
     if feedback.valid?
       redirect_to root_path, :notice => 'Thanks for your feedback!'
     else
-      redirect_to root_path, :notice => 'Oops! Error message here!'
+      redirect_to root_path, :alert => 'Oops! Error message here!'
     end
   end
 end
