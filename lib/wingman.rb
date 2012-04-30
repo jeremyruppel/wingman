@@ -5,6 +5,7 @@ module Wingman
   autoload :Config,   'wingman/config'
   autoload :Stat,     'wingman/stat'
   autoload :Feedback, 'wingman/feedback'
+  autoload :Railsy,   'wingman/railsy'
 
   class << self
     def configure
@@ -13,6 +14,7 @@ module Wingman
   end
 
   include Config
+  include Railsy
 end
 
 require 'wingman/engine' if defined?(Rails)

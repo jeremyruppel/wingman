@@ -5,4 +5,7 @@
     = stylesheet_link_tag    'wingman'
     = javascript_include_tag 'wingman'
   %body
+    %header
+      %h1= Wingman.application_name
+      %span= controller_name.titleize
     = yield
