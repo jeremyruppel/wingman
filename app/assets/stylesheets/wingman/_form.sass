@@ -1,11 +1,26 @@
 form
-  label, input
+  label, input, textarea
     display: block
     padding: $margin/2
+    margin: $margin/2 0
   label
     font-weight: bold
-  input
+  input, textarea
     width: 100%
     @include box-sizing( border-box )
+    @include border-radius( $radius )
+    border: 1px solid $dark-grey
+    &[readonly]
+      color: $dark-grey
+    &[type=submit]
+      margin-top: $margin
+      background: $blue
+      font-weight: bold
+      color: $white
+      border: 1px solid $dark-blue
+      @include text-shadow( $dark-blue 0 2px 2px )
+      cursor: pointer
 
+  fieldset#user
+    display: none
 // end

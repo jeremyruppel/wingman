@@ -1,23 +1,28 @@
 // colors
 
 $blue: #3A74FF
+$dark-blue: darken( $blue, 15% )
 $grey: #E4E4E4
+$dark-grey: darken( $grey, 15% )
 $white: #FFF
+$black: #303030
 
 // typography
 
 $font: "Helvetica Neue", helvetica, arial, sans-serif
-$base: 14px
+$base: 16px
 $large: $base + 12px
 
 // sizes
 
 $width: 700px
 $margin: 18px
+$radius: 6px
 
-body, input
+body, input, textarea
   font-size: $base
   font-family: $font
+  color: $black
 
 header, form
   width: $width
@@ -28,6 +33,10 @@ body
   background: $grey
 form, header
   background: $white
+  border-left: 1px solid $dark-grey
+  border-right: 1px solid $dark-grey
+form
+  border-bottom: 1px solid $dark-grey
 
 
 // end
